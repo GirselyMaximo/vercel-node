@@ -3,7 +3,7 @@ let tasks = [
   { id: 2, task: "Deploy na Vercel", done: true }
 ];
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   const method = req.method;
 
   if (method === "GET") {
@@ -24,4 +24,4 @@ export default function handler(req, res) {
   }
 
   res.status(405).json({ error: "Método não permitido" });
-}
+};
